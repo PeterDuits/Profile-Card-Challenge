@@ -1,35 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Profile card component</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Victor Crest
-  26
-  London
+        <title>Frontend Mentor | Profile card component</title>
 
-  80K
-  Followers
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
-  803K
-  Likes
+            body {
+                min-height: 100vh;
+                padding: 0;
+                margin: 0;
+                font-family: 'Kumbh Sans', sans-serif;
+                background-color: #19a1ae;
+                background-image: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
+                background-position: -70% 190%, 150% -150%;
+                background-repeat: no-repeat, no-repeat;
+            }
 
-  1.4K
-  Photos
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            .profile-card {
+                display: flex;
+                flex-direction: column;
+                height: 400px;
+                width: 380px;
+                margin: 0 auto;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+
+                border-radius: 10px;
+            }
+
+            .profile-card__image {
+                display: flex;
+                justify-content: center;
+                height: 140px;
+                border-radius: 10px 10px 0 0;
+                background: url("./images/bg-pattern-card.svg");
+            }
+
+            .profile-card__avatar {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: 5px solid white;
+                position: relative;
+                top: 90px;
+            }
+
+            .profile-card__body {
+                flex: 1;
+                margin-top: 70px;
+                text-align: center;
+            }
+
+            .profile-card__name {
+                margin-bottom: 10px;
+                color: #1D1E29;
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+            .profile-card__age {
+                margin-left: 6px;
+                font-weight: 400;
+                color: #969696;
+            }
+
+            .profile-card__location {
+                margin-top: 0;
+                font-size: 14px;
+                color: #969696;
+            }
+
+            .profile-card__footer {
+                display: flex;
+                height: 100px;
+                flex-direction: column;
+                justify-content: center;
+                border-top: 1px solid lightgray;
+            }
+
+            .profile-card__stats {
+                display: flex;
+                padding: 0 50px;
+                justify-content: space-between;
+            }
+
+            .profile-card__stat {
+                text-align: center;
+            }
+
+            .profile-card__stat-title {
+                margin-bottom: 5px;
+                font-size: 18px;
+                font-weight: 700;
+                color: #1D1E29;
+            }
+
+            .profile-card__stat-subtitle {
+                margin-top: 5px;
+                font-size: 12px;
+                letter-spacing: .1rem;
+                color: #969696;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="profile-card">
+            <div class="profile-card__image">
+                <img src="./images/image-victor.jpg" alt="avatar" class="profile-card__avatar">
+            </div>
+            <div class="profile-card__body">
+                <p class="profile-card__name">Victor Crest <span class="profile-card__age">26</span></p>
+                <p class="profile-card__location">London</p>
+            </div>
+            <div class="profile-card__footer">
+                <div class="profile-card__stats">
+                    <div class="profile-card__stat">
+                        <p class="profile-card__stat-title">80K</p>
+                        <p class="profile-card__stat-subtitle">Followers</p>
+                    </div>
+                    <div class="profile-card__stat">
+                        <p class="profile-card__stat-title">803K</p>
+                        <p class="profile-card__stat-subtitle">Likes</p>
+                    </div>
+                    <div class="profile-card__stat">
+                        <p class="profile-card__stat-title">1.4K</p>
+                        <p class="profile-card__stat-subtitle">Photos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
